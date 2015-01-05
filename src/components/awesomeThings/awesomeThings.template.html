@@ -1,0 +1,13 @@
+<div layout="row" layout-align="center"><md-button aria-label="foo" layout-align="center" class="md-button" ng-click="things.reorganize()">Reorganize</md-button></div>
+<div class="techs" layout-align="center">
+    <md-card ng-repeat="awesomeThing in things.awesomeThings | orderBy:'rank'">
+        <div class="thumbnail">
+            <img class="pull-right" ng-src="assets/images/{{awesomeThing.logo}}" alt="{{awesomeThing.title}}">
+            <div class="caption">
+                <h3>{{awesomeThing.title}}</h3>
+                <p>{{awesomeThing.description}}</p>
+                <p><a ng-href="{{awesomeThing.url}}">{{awesomeThing.url}}</a></p>
+            </div>
+        </div>
+    </md-card>
+</div>

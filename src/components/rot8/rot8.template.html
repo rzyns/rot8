@@ -1,0 +1,21 @@
+<div layout="row" layout-align="center" class="rot8" ng-mouseenter="rot8.active = true"
+    ng-mouseleave="rot8.active = false;">
+    <md-card class="item" ng-repeat="(name, thing) in rot8.rot8" ng-class="'item' + ($index + 1)"
+        ng-mouseenter="rot8.setActiveItem(thing, name)"
+        ng-mouseleave="rot8.clearActiveItem()"
+        ng-click="rot8.setSelectedItem(thing, name)">
+        <h1>{{thing.title || thing.name || name}}</h1>
+    </md-card>
+</div>
+<div layout="row" layout-align="center" ng-if="rot8.selectedItem" class="techs">
+    <md-card>
+        <div class="thumbnail">
+            <img class="pull-right" ng-src="assets/images/{{rot8.selectedItem.logo}}" alt="{{rot8.selectedItem.title}}">
+            <div class="caption">
+                <h3>{{rot8.selectedItem.title}}</h3>
+                <p>{{rot8.selectedItem.description}}</p>
+                <p><a ng-href="{{rot8.selectedItem.url}}">{{rot8.selectedItem.url}}</a></p>
+            </div>
+        </div>
+    </md-card>
+</div>
